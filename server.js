@@ -8,7 +8,7 @@ const categories = require('./server-data/categories');
 
 const app = express();
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 4000));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
