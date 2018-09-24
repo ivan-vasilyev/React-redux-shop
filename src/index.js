@@ -14,6 +14,7 @@ import Phones from 'containers/phones';
 import Phone from 'containers/phone';
 import Basket from 'containers/basket';
 import NotFound from 'containers/notFound';
+import Login from 'containers/login';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -30,6 +31,7 @@ ReactDOM.render(
             </Route>
             <Route path='/phones/:id' component={Phone}/>
             <Route path='/basket' component={Basket} />
+            <Route path='/login' component={Login} />
             <Route path='*' component={NotFound} />
         </Router>
     </Provider>,
