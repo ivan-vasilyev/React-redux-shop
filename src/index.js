@@ -15,6 +15,7 @@ import Phone from 'containers/phone';
 import Basket from 'containers/basket';
 import NotFound from 'containers/notFound';
 import Login from 'containers/login';
+import isAdmin from 'containers/protectedRoute';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -30,7 +31,7 @@ ReactDOM.render(
                 <Route path='/categories/:id' component={Phones}/>
             </Route>
             <Route path='/phones/:id' component={Phone}/>
-            <Route path='/basket' component={Basket} />
+            <Route path='/basket' component={isAdmin(Basket)} />
             <Route path='/login' component={Login} />
             <Route path='*' component={NotFound} />
         </Router>

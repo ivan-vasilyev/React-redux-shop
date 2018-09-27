@@ -34,4 +34,12 @@ app.get('/api/categories', (req, res) => {
     res.send(categories);
 });
 
+app.post('/api/login', (req, res) => {
+    res.status(200).json({
+        user: 'admin',
+        email: 'admin@admin.ru',
+        isAdmin: true
+    });
+});
+
 app.listen(app.get('port'), () => console.log(`Server is listening: http://localhost:${app.get('port')}`));
